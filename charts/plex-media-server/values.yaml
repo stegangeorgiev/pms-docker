@@ -195,13 +195,13 @@ extraEnv:
 #     hostPath:
 #       path: /home/stefan/plex  # This is the directory on the Kubernetes node
 #       type: DirectoryOrCreate
-  volumeMounts:
-    - name: data-volume
-      mountPath: /plex-media
-  volumes:
-    - name: data-volume
-      hostPath:
-        path: /plex-media
+volumeMounts:
+  - name: data-volume
+    mountPath: /plex-media
+volumes:
+  - name: data-volume
+    hostPath:
+      path: /plex-media
         
 extraContainers: []
 # extraContainers:
