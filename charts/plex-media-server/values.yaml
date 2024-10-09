@@ -190,7 +190,7 @@ extraEnv:
 #extraVolumeMounts: []
 extraVolumeMounts:
   - name: data-volume
-    mountPath: /plex
+    mountPath: /plex-media
 #   - name: some-volume-name
 #     mountPath: /path/in/container
 
@@ -200,7 +200,7 @@ extraVolumeMounts:
 extraVolumes:
   - name: data-volume
     hostPath:
-      path: /plex
+      path: /plex-media
       type: DirectoryOrCreate
 #   - name: some-volume-name
 #     emptyDir: {}
