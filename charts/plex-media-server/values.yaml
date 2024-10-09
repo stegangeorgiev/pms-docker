@@ -18,7 +18,13 @@ pms:
   storageClassName: null
   configStorage: 2Gi
   configExistingClaim: ""
-  resources: {}
+  resources:
+    requests:
+      memory: "2Gi"  # Minimum 2GB memory request
+      cpu: "2"       # Minimum 2 CPU cores
+    limits:
+      memory: "2Gi"  # Maximum 2GB memory limit
+      cpu: "2"       # Maximum 2 CPU cores
 
 initContainer:
   image:
