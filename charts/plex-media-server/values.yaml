@@ -80,11 +80,18 @@ extraEnv:
 extraVolumeMounts:
   - name: data-volume
     mountPath: /plex-media
-
+extraVolumeMounts:
+  - name: movie-volume
+    mountPath: /Movies
+    
 extraVolumes:
   - name: data-volume
     hostPath:
-      path: /plex-media  # Correct path on the host
+      path: /plex-media  
       type: DirectoryOrCreate
-
+extraVolumes:
+  - name: movie-volume
+    hostPath:
+      path: /home/stefan/plex  
+      type: DirectoryOrCreate
 extraContainers: []
