@@ -76,14 +76,14 @@ commonLabels: {}
 extraEnv:
   PLEX_CLAIM: "claim-gb7dYdsUBYX37k5Yi87Q"
 
-# These should not be inside extraEnv. Move them outside of that block.
-extraVolumeMounts:[]
+# Corrected extraVolumeMounts and extraVolumes without square brackets.
+extraVolumeMounts:
   - name: data-volume
     mountPath: /plex-media
   - name: movie-volume
     mountPath: /Movies
     
-extraVolumes:[]
+extraVolumes:
   - name: data-volume
     hostPath:
       path: /plex-media  
@@ -92,4 +92,5 @@ extraVolumes:[]
     hostPath:
       path: /home/stefan/plex  
       type: DirectoryOrCreate
+
 extraContainers: []
