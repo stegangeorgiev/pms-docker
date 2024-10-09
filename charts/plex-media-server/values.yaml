@@ -195,7 +195,7 @@ extraEnv:
 #     hostPath:
 #       path: /home/stefan/plex  # This is the directory on the Kubernetes node
 #       type: DirectoryOrCreate
-volumeMounts:
+  volumeMounts:
     - name: data-volume
       mountPath: /plex-media
   volumes:
