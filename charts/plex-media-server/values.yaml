@@ -77,19 +77,17 @@ extraEnv:
   PLEX_CLAIM: "claim-gb7dYdsUBYX37k5Yi87Q"
 
 # These should not be inside extraEnv. Move them outside of that block.
-extraVolumeMounts:
+extraVolumeMounts:[]
   - name: data-volume
     mountPath: /plex-media
-extraVolumeMounts:
   - name: movie-volume
     mountPath: /Movies
     
-extraVolumes:
+extraVolumes:[]
   - name: data-volume
     hostPath:
       path: /plex-media  
       type: DirectoryOrCreate
-extraVolumes:
   - name: movie-volume
     hostPath:
       path: /home/stefan/plex  
