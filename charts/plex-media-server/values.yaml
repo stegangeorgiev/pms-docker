@@ -200,8 +200,8 @@ extraVolumeMounts:
 extraVolumes:
   - name: data-volume
     hostPath:
-      path: /home/stefan/data
-      type: Directory
+      path: /home/stefan/plex
+      type: DirectoryOrCreate
 #   - name: some-volume-name
 #     emptyDir: {}
 
