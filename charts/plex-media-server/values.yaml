@@ -186,24 +186,15 @@ extraEnv:
 #   ALLOWED_NETWORKS: "0.0.0.0/0"
 
 
-# Optionally specify additional volume mounts for the PMS and init containers.
-#extraVolumeMounts: []
 extraVolumeMounts:
   - name: data-volume
-    mountPath: /plex-media
-#   - name: some-volume-name
-#     mountPath: /path/in/container
+    mountPath: /plex-media  # This is the directory inside the container
 
-
-# Optionally specify additional volumes for the pod.
-#extraVolumes: []
 extraVolumes:
   - name: data-volume
     hostPath:
-      path: /plex-media
+      path: /home/stefan/plex  # This is the directory on the Kubernetes node
       type: DirectoryOrCreate
-#   - name: some-volume-name
-#     emptyDir: {}
 
 extraContainers: []
 # extraContainers:
