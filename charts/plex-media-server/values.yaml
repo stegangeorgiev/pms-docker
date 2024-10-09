@@ -187,15 +187,21 @@ extraEnv:
 
 
 # Optionally specify additional volume mounts for the PMS and init containers.
-extraVolumeMounts: []
-# extraVolumeMounts:
+#extraVolumeMounts: []
+extraVolumeMounts:
+  - name: data-volume
+    mountPath: /plex
 #   - name: some-volume-name
 #     mountPath: /path/in/container
 
 
 # Optionally specify additional volumes for the pod.
-extraVolumes: []
-# extraVolumes:
+#extraVolumes: []
+extraVolumes:
+  - name: data-volume
+    hostPath:
+      path: /home/stefan/plex
+      type: Directory
 #   - name: some-volume-name
 #     emptyDir: {}
 
