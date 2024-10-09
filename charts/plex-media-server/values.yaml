@@ -81,12 +81,12 @@ extraEnv:
   PLEX_CLAIM: "claim-gb7dYdsUBYX37k5Yi87Q"
 
   extraVolumeMounts:
-  - name: data-volume
-    mountPath: /plex-media
+    - name: data-volume
+      mountPath: /plex-media
 
   extraVolumes:
-  - name: data-volume
-    hostPath:
-      path: /plex-media
-      type: DirectoryOrCreate        
+    - name: data-volume
+      hostPath:
+        path: /plex-media
+        type: DirectoryOrCreate        
 extraContainers: []
