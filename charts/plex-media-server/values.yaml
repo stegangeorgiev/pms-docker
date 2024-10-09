@@ -186,16 +186,23 @@ extraEnv:
 #   ALLOWED_NETWORKS: "0.0.0.0/0"
 
 
-extraVolumeMounts:
-  - name: data-volume
-    mountPath: /plex-media  # This is the directory inside the container
+# extraVolumeMounts:
+#   - name: data-volume
+#     mountPath: /plex-media  # This is the directory inside the container
 
-extraVolumes:
-  - name: data-volume
-    hostPath:
-      path: /home/stefan/plex  # This is the directory on the Kubernetes node
-      type: DirectoryOrCreate
-
+# extraVolumes:
+#   - name: data-volume
+#     hostPath:
+#       path: /home/stefan/plex  # This is the directory on the Kubernetes node
+#       type: DirectoryOrCreate
+volumeMounts:
+    - name: data-volume
+      mountPath: /plex-media
+  volumes:
+    - name: data-volume
+      hostPath:
+        path: /plex-media
+        
 extraContainers: []
 # extraContainers:
 #  - name: <container name>
