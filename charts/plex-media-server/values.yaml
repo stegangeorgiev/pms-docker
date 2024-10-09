@@ -19,6 +19,7 @@ pms:
   configStorage: 2Gi
   configExistingClaim: ""
   resources: {}
+
 initContainer:
   image:
     registry: index.docker.io
@@ -26,7 +27,6 @@ initContainer:
     tag: 3.18.0
     sha: ""
     pullPolicy: IfNotPresent
-
   script: ""
 
 runtimeClassName: ""
@@ -40,12 +40,9 @@ rclone:
     sha: ""
     pullPolicy: IfNotPresent
   configSecret: ""
-
   remotes: []
-
   readOnly: true
   additionalArgs: []
-
   resources: {}
 
 imagePullSecrets: []
@@ -67,7 +64,6 @@ service:
   port: 32400
   annotations: {}
 
-
 nodeSelector: {}
 
 tolerations: []
@@ -80,13 +76,15 @@ commonLabels: {}
 extraEnv:
   PLEX_CLAIM: "claim-gb7dYdsUBYX37k5Yi87Q"
 
-  extraVolumeMounts:
-    - name: data-volume
-      mountPath: /plex-media
+# These should not be inside extraEnv. Move them outside of that block.
+extraVolumeMounts:
+  - name: data-volume
+    mountPath: /plex-media
 
-  extraVolumes:
-    - name: data-volume
-      hostPath:
-        path: /plex-media
-        type: DirectoryOrCreate        
+extraVolumes:
+  - name: data-volume
+    hostPath:
+      path: /plex-media  # Correct path on the host
+      type: DirectoryOrCreate
+
 extraContainers: []
