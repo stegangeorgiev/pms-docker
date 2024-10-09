@@ -21,10 +21,10 @@ pms:
   resources:
     requests:
       memory: "2Gi"  # Minimum 2GB memory request
-      cpu: "4"       # Minimum 2 CPU cores
+      cpu: "2"       # Minimum 2 CPU cores
     limits:
-      memory: "2Gi"  # Maximum 2GB memory limit
-      cpu: "4"       # Maximum 2 CPU cores
+      memory: "4Gi"  # Maximum 2GB memory limit
+      cpu: "3"       # Maximum 2 CPU cores
 
 initContainer:
   image:
