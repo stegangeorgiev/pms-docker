@@ -197,7 +197,7 @@ extraEnv:
 #       type: DirectoryOrCreate
 volumeMounts:
   - name: data-volume
-    mountPath: /plex-media
+    mountPath: /plex-data
 volumes:
   - name: data-volume
     hostPath:
